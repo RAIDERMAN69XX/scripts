@@ -1,0 +1,7 @@
+{
+  "server": "gerald.top",
+  "server_port": 8888,
+  "password": "PASSWORD",
+  "method": "aes-256-cfb",
+  "local_port": 1234
+}

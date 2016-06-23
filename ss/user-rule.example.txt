@@ -1,0 +1,8 @@
+! Put user rules line by line in this file.
+! See https://adblockplus.org/en/filter-cheatsheet
+
+||api.dropboxapi.com
+||content.dropboxapi.com
+||medium.com
+||login.live.com
+||api.onedrive.com
