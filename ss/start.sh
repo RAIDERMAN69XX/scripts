@@ -6,4 +6,4 @@ if [ -z "$CONF" ]; then
   CONF="$CWD/config.json"
 fi
 
-ss-local -c $CONF
+nohup ss-local -c $CONF > $CWD/ss.log &
