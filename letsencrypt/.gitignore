@@ -1,0 +1,6 @@
+*.py
+*.key
+*.pem
+*.csr
+*.crt
+/challenges
