@@ -15,7 +15,7 @@ Usage
   $ sh $SS_DIR/update.sh
   ```
 
-Usage for Mac OS X
+Usage for Mac OS X and Linux
 ---
 * Install shadowsocks-libev
   ``` sh
@@ -28,13 +28,23 @@ Usage for Mac OS X
   $ sh $SS_DIR/setproxy.sh off
   ```
 
-* Start
+* Start local
   ``` sh
-  $ sh $SS_DIR/start.sh
-  $ sh $SS_DIR/start.sh $SS_DIR/other_config.json
+  $ sh $SS_DIR/start-local.sh
+  $ sh $SS_DIR/start-local.sh $SS_DIR/config-other.json
+  ```
+
+* Start server
+  ``` sh
+  $ sh $SS_DIR/start-server.sh
+  $ sh $SS_DIR/start-server.sh $SS_DIR/server-other.json
   ```
 
 * Stop
   ``` sh
+  # Stop local
   $ sh $SS_DIR/stop.sh
+
+  # Stop server
+  $ sh $SS_DIR/stop.sh ss-server
   ```

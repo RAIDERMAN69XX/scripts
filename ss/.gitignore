@@ -1,3 +1,6 @@
 gfwlist.js
-config.json
 user-rule.txt
+config.json
+config-*.json
+server.json
+server-*.json
