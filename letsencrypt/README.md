@@ -17,7 +17,7 @@ server {
     server_name gerald.top www.gerald.top;
 
     location /.well-known/acme-challenge/ {
-        alias /absolute/path/to/challenges;
+        alias /absolute/path/to/challenges/;
         try_files $uri =404;
     }
 
