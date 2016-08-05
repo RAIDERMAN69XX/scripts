@@ -7,7 +7,7 @@ exists() {
   return $?
 }
 
-switch_pac() {
+set_pac() {
   if [ "$1" = "off" ]; then
     networksetup -setautoproxystate $SERVICE off
   else
@@ -15,7 +15,7 @@ switch_pac() {
   fi
 }
 
-switch_socks() {
+set_socks() {
   if [ "$1" = "off" ]; then
     networksetup -setsocksfirewallproxystate $SERVICE off
   else
@@ -26,6 +26,24 @@ switch_socks() {
 switch_off() {
   switch_pac off
   switch_socks off
+}
+
+switch_pac() {
+  if [ "$1" = "off" ]; then
+    set_pac off
+  else
+    set_pac
+    set_socks off
+  fi
+}
+
+switch_socks() {
+  if [ "$1" = "off" ]; then
+    set_socks off
+  else
+    set_socks
+    set_pac off
+  fi
 }
 
 show_help() {
