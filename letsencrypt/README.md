@@ -5,7 +5,7 @@ Issue and renew [Let's Encrypt](https://letsencrypt.org/) certificates.
 
 Usage
 ---
-All scripts should be run in the same directory as the scripts.
+All scripts will be run in the same directory as themselves.
 
 For initial use, run scripts 1-4.
 

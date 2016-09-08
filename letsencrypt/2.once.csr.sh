@@ -1,5 +1,7 @@
 #!/bin/sh
 
+cd `dirname $0`
+
 # 1. Generate a domain key
 
 # RSA
