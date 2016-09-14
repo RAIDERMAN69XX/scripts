@@ -7,11 +7,28 @@ Usage
 ---
 All scripts will be run in the same directory as themselves.
 
-For initial use, run scripts 1-4.
+For initial use, run scripts 1-4. For renewals, just run script 4.
 
-Modify nginx config files like this:
+### Step 1
+
+Run script 1 **once**. Create account key.
+
+### Step 2
+
+Run script 2 **once**. Download acme-tiny script.
+
+### Step 3
+
+Run script 3 **every time after domains are changed**. Create the CSR.
+
+### Step 4
+
+Make sure the NginX is correctly configured.
+
+* `server_name` should contain all the server names to be verified.
 
 ``` conf
+# HTTP
 server {
     listen 80;
     server_name gerald.top www.gerald.top;
@@ -22,10 +39,26 @@ server {
     }
 
     location / {
-        return 301 https://gerald.top$request_uri;
+        return 301 https://$host$request_uri;
     }
 }
+```
 
+Run script 4 **regularly**.
+
+Be aware that the certificate expires every 90 days. Automatical renewals
+may be set up by `crontab -e` and append lines below:
+
+```
+0 0 1 * * /absolute/path/to/4.cert.sh >/dev/null 2>&1
+```
+
+### Step 5
+
+Configure for HTTPS:
+
+```
+# HTTPS
 server {
     listen       443 ssl;
     server_name  gerald.top;
@@ -50,15 +83,6 @@ server {
         try_files $uri =404;
     }
 }
-```
-
-For renewals, just run script 4.
-
-Be aware that the certificate expires every 90 days. Automatical renewals
-may be set up by `crontab -e` and append lines below:
-
-```
-0 0 1 * * /absolute/path/to/4.cert.sh >/dev/null 2>&1
 ```
 
 References
