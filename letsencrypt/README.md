@@ -23,7 +23,7 @@ Run script 3 **every time after domains are changed**. Create the CSR.
 
 ### Step 4
 
-Make sure the NginX is correctly configured.
+Make sure nginx is correctly configured.
 
 * `server_name` should contain all the server names to be verified.
 
@@ -44,13 +44,13 @@ server {
 }
 ```
 
-Run script 4 **regularly**.
+Run script 4 and reload nginx **regularly**.
 
 Be aware that the certificate expires every 90 days. Automatical renewals
 may be set up by `crontab -e` and append lines below:
 
 ```
-0 0 1 * * /absolute/path/to/4.cert.sh >/dev/null 2>&1
+0 0 1 * * /absolute/path/to/4.cert.sh && nginx -s reload
 ```
 
 ### Step 5
