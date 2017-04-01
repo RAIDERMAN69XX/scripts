@@ -1,6 +1,2 @@
-*.py
-*.key
-*.pem
-*.csr
-*.crt
-/challenges
+/data
+/domains.txt

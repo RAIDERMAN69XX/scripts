@@ -3,7 +3,7 @@
 # Fetch acme-tiny script
 
 cd `dirname $0`
-mkdir challenges 2>/dev/null
+. ./config.sh
 
-wget https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py
-# curl https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py > acme_tiny.py
+wget -O - https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py > $DATA_ACME
+# curl https://raw.githubusercontent.com/diafygi/acme-tiny/master/acme_tiny.py > $DATA_ACME

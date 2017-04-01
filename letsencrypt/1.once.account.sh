@@ -3,4 +3,6 @@
 # to skip some extra Proof of Possession challenges.
 
 cd `dirname $0`
-openssl genrsa 4096 > account.key
+. ./config.sh
+mkdir -p $DATA_CHALLENGES
+openssl genrsa 4096 > $DATA_ACCOUNT_KEY
