@@ -34,7 +34,7 @@ server {
     server_name gerald.top www.gerald.top;
 
     location /.well-known/acme-challenge/ {
-        alias /absolute/path/to/challenges/;
+        alias /absolute/path/to/data/challenges/;
         try_files $uri =404;
     }
 
@@ -63,8 +63,8 @@ server {
     listen       443 ssl;
     server_name  gerald.top;
 
-    ssl_certificate      /absolute/path/to/chained.pem;
-    ssl_certificate_key  /absolute/path/to/domain.key;
+    ssl_certificate      /absolute/path/to/data/chained.pem;
+    ssl_certificate_key  /absolute/path/to/data/domain.key;
 
     ssl_session_cache shared:SSL:1m;
     ssl_session_timeout  5m;
