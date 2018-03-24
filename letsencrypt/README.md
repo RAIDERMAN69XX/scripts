@@ -79,7 +79,7 @@ server {
     }
 
     location /static/ {
-        alias /absolute/path/to/static;
+        alias /absolute/path/to/static/;
         try_files $uri =404;
     }
 }
