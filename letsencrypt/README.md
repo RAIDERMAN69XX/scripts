@@ -50,7 +50,7 @@ Be aware that the certificate expires every 90 days. Automatical renewals
 may be set up by `crontab -e` and append lines below:
 
 ```
-0 0 1 * * /absolute/path/to/4.cert.sh && nginx -s reload
+0 0 1 * * PATH=/absolute/path/to/python:$PATH /absolute/path/to/4.cert.sh && nginx -s reload
 ```
 
 ### Step 5
