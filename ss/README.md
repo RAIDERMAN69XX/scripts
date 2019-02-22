@@ -1,8 +1,6 @@
-Shadowsocks
-===
+# Shadowsocks
 
-Usage
----
+## Usage
 
 * Create a `config.json` based on `config.example.json`, for more rules see
   <https://github.com/shadowsocks/shadowsocks/wiki/Configuration-via-Config-File>
@@ -15,11 +13,12 @@ Usage
   $ sh $SS_DIR/update.sh
   ```
 
-Usage for Mac OS X and Linux
----
+## Usage for Mac OS X and Linux
+
 * Install shadowsocks-libev
   ``` sh
-  $ brew install shadowsocks-libev
+  $ brew install rust
+  $ cargo install shadowsocks-rust
   ```
 
 * Switch proxy:
@@ -46,5 +45,5 @@ Usage for Mac OS X and Linux
   $ sh $SS_DIR/stop.sh
 
   # Stop server
-  $ sh $SS_DIR/stop.sh ss-server
+  $ sh $SS_DIR/stop.sh ssserver
   ```

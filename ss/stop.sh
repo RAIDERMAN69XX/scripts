@@ -2,7 +2,7 @@
 
 PROCESS=$1
 if [ -z "$PROCESS" ]; then
-  PROCESS=ss-local
+  PROCESS=sslocal
 fi
 
 PID=`ps x | grep $PROCESS | grep -v grep | awk '{print $1}'`

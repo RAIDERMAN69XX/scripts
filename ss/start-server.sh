@@ -6,4 +6,4 @@ if [ -z "$CONF" ]; then
   CONF="$CWD/server.json"
 fi
 
-nohup ss-server -c $CONF > $CWD/ss.log &
+nohup ssserver -c $CONF > $CWD/ss.log &
